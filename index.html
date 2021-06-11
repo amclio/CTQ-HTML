@@ -3,9 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <title>아이유</title>
+    <style>
+      a {
+        color: inherit;
+      }
+    </style>
   </head>
   <body>
     <h1><a href="index.html">아이유</a></h1>
+    <button
+      onclick="
+        const target = document.querySelector('body');
+
+        if (this.value === 'Night') {
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          this.value = 'Day';
+        } else {
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white';
+          this.value = 'Night';
+        }
+
+        this.innerText = this.value
+    "
+      value="Day"
+    >
+      Day
+    </button>
+    <button
+      onclick="
+      const target = document.getElementById('iuImage')
+      
+      counter++ 
+
+      target.src = `./${imgList[counter]}`
+
+      if (imgList.length - 1 === counter) {
+        counter = 0
+      }
+    "
+    >
+      Another Image
+    </button>
     <ul>
       <li><a href="1.html">LILAC</a></li>
       <li><a href="2.html">Love poem</a></li>
@@ -21,6 +61,15 @@
       각종 예능 프로그램 및 광고 모델로 활약 중이고 다양한 드라마와 영화에서
       연기자로서 활동을 펼치고 있는 멀티 엔터테이너이다.[51]
     </p>
-    <img src="./iu-profile.jpg" />
+    <img id="iuImage" src="./iu-profile.jpg" />
+    <script>
+      let counter = 0
+      const imgList = [
+        'iu-profile.jpg',
+        'iu-lilac.jpg',
+        'iu-bbibbi.jpg',
+        'iu-love-poem.jpg',
+      ]
+    </script>
   </body>
 </html>
